@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vulnerable-site:
+    build: .
+    container_name: vulnerable-website
+    ports:
+      - "5000:5000"
+      - "8080:5000"  # Дополнительный порт для доступа с другой машины
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./data:/app/data  # Сохраняем БД на хосте

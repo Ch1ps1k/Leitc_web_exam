@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .container {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0b7dda;
+        }
+        .error {
+            color: #f44336;
+            padding: 10px;
+            background: #ffebee;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .test-credentials {
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Вход в систему</h2>
+        
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+        
+        <div class="test-credentials">
+            <strong>Тестовые учетные данные:</strong><br>
+            Логин: Administrator<br>
+            Пароль: admin123
+        </div>
+        
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+        
+        <div class="links">
+            <p>Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+            <a href="/">На главную</a>
+        </div>
+    </div>
+</body>
+</html>
