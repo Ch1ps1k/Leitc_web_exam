@@ -69,13 +69,6 @@
         {% if error %}
         <div class="error">{{ error }}</div>
         {% endif %}
-        
-        <div class="test-credentials">
-            <strong>Тестовые учетные данные:</strong><br>
-            Логин: Administrator<br>
-            Пароль: admin123
-        </div>
-        
         <form method="POST" action="/login">
             <input type="text" name="username" placeholder="Имя пользователя" required>
             <input type="password" name="password" placeholder="Пароль" required>

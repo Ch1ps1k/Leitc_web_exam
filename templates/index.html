@@ -62,25 +62,8 @@
         </div>
         
         <div class="menu">
-            <a href="/">Главная</a>
             <a href="/register">Регистрация</a>
             <a href="/login">Вход</a>
-            {% if request.cookies.get('username') %}
-                <a href="/profile">Профиль</a>
-                <a href="/logout">Выход</a>
-            {% endif %}
-        </div>
-        
-        <div class="info">
-            <h3>API Endpoints:</h3>
-            <ul>
-                <li><code>GET /search?q=[query]</code> - поиск пользователей</li>
-                <li><code>GET /api/users?limit=[number]</code> - список пользователей</li>
-                <li><code>GET /debug</code> - отладочная информация</li>
-            </ul>
-            
-            <h3>Для тестирования:</h3>
-            <p>Пользователь: <strong>Administrator</strong>, Пароль: <strong>admin123</strong></p>
         </div>
     </div>
 </body>

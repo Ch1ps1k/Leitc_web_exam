@@ -23,15 +23,6 @@ def init_db():
         )
     ''')
     
-    # Добавляем тестового пользователя Administrator
-    try:
-        c.execute("INSERT OR IGNORE INTO users (username, password) VALUES ('Administrator', 'admin123')")
-        conn.commit()
-    except:
-        pass
-    
-    conn.close()
-
 def md5_hash(text):
     """Простое MD5 хеширование (уязвимо!)"""
     return hashlib.md5(text.encode()).hexdigest()
